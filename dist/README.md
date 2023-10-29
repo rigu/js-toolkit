@@ -43,31 +43,128 @@ import { asArray, emptyDefault, isNotEmpty, isStringNotEmpty } from '@rigu/js-to
 ```
 
 
-### String  
+### **String utils**
 <!-- eslint-disable no-new-wrappers -->
-| Function | Description | Examples |
-| :--- | :--- | :--- |
-| `compareIgnoreCase( str1, str2 )` | Compares two strings ignoring case and special chars <br> in a null-safe manner |`(undefined, undefined); // return true`<br>`(undefined, null);      // return false`<br>`(null, null);           // return true`<br>`('','');                // return true`<br>`('ast', 'ast');         // return true`<br>`('âșț', 'ast');         // return true`|
-| `isString( value )` | Check if value is a string type |`isString(undefined); // return false`<br>`isString(null);      // return false`<br>`isString(0);         // return false`<br>`isString(1);         // return false`<br>`isString('');        // return true`<br>`isString('a');       // return true`<br>`isString([]);        // return false`|
-| `isStringNotEmpty( value )` | Check if value is a string type <br > and if is not empty|`isStringNotEmpty(undefined); // false`<br>`isStringNotEmpty(null);      // false`<br>`isStringNotEmpty(0);         // false`<br>`isStringNotEmpty(1);         // false`<br>`isStringNotEmpty('');        // false`<br>`isStringNotEmpty('a');       // true`<br>`isStringNotEmpty([]);        // false`<br>`isStringNotEmpty(['abc']);   // false`|
-| `defaultEmpty( value )` <br>`emptyDefault( value )` | Return empty string <br>if provided null or undefined |`defaultEmpty(undefined); // return ''`<br>`defaultEmpty(null);      // return ''`<br>`defaultEmpty(0);         // return 0`<br>`defaultEmpty(1);         // return 1`<br>`defaultEmpty('');        // return ''`<br>`defaultEmpty('a');       // return 'a'`<br>`defaultEmpty([]);        // return []`|
-| `lowerCaseIfString( value )` | | |
-| `upperCaseIfString( value )` | | |
-| `includeIgnoreCase( value )` | | |
-| `capitalize( value )` | | |
 
+### `isString( value )`
+*Check if value is a string type*
+```javascript
+isString(undefined); // return false
+isString(null);      // return false
+isString(0);         // return false
+isString(1);         // return false
+isString('');        // return true
+isString('a');       // return true
+isString([]);        // return false
+```
+<br>
 
-### Array   
+#### `isStringNotEmpty( value )`
+*Check if value is a string type and if is not empty*
+```javascript
+isStringNotEmpty(undefined); // false
+isStringNotEmpty(null);      // false
+isStringNotEmpty(0);         // false
+isStringNotEmpty(1);         // false
+isStringNotEmpty('');        // false
+isStringNotEmpty('a');       // true
+isStringNotEmpty([]);        // false
+isStringNotEmpty(['abc']);   // false
+```
+<br>
+
+#### `defaultEmpty( value )` `emptyDefault( value )`
+*Return empty string if provided null or undefined*
+```javascript
+defaultEmpty(undefined); // return ''
+defaultEmpty(null);      // return ''
+defaultEmpty(0);         // return 0
+defaultEmpty(1);         // return 1
+defaultEmpty('');        // return ''
+defaultEmpty('a');       // return 'a'
+defaultEmpty([]);        // return []`
+```
+<br>
+
+####  `lowerCaseIfString( value )`
+<br>
+
+####  `upperCaseIfString( value )`
+<br>
+
+####  `includeIgnoreCase( value )`
+<br>
+
+####  `capitalize( value )`
+<br>
+
+#### `compareIgnoreCase( str1, str2 )`
+* Compares two strings ignoring case and special chars in a null-safe manner
+```javascript
+compareIgnoreCase(undefined, undefined); // return true
+compareIgnoreCase(undefined, null);      // return false
+compareIgnoreCase(null, null);           // return true
+compareIgnoreCase('','');                // return true
+compareIgnoreCase('ast', 'ast');         // return true
+compareIgnoreCase('âșț', 'ast');         // return true
+```
+<br>
+
+### **Array utils**
 <!-- eslint-disable no-new-wrappers -->
-| Function | Description | Examples |
-| :--- | :--- | :--- |
-| `asArray( value )` <br> `arrayOf( value )` | Improved version of **Array.of**  | `asArray(undefined); // return []`<br>`asArray(null);      // return []`<br>`asArray('');        // return ['']`<br>`asArray('abc');     // return ['abc']`<br>`asArray(['abc']);   // return ['abc']`<br>`asArray(11);        // return [11]`<br>`asArray([11]);      // return [11]`<br>`asArray([5, 6, 7]); // return [5, 6, 7]`|
-| `isNotEmpty( value )` <br> `notEmpty( value )` | Check if object is array, and is not empty in a null-safe manner |`isNotEmpty(undefined); // return false`<br>`isNotEmpty(null);      // return false`<br>`isNotEmpty(123);       // return false`<br>`isNotEmpty([]);        // return false`<br>`isNotEmpty('');        // return false`<br>`isNotEmpty('a');       // return true`<br>`isNotEmpty('abc');     // return true`<br>`isNotEmpty([1]);       // return true`|
+#### `asArray( value )`  `arrayOf( value )`
+* Improved version of **Array.of**
+```javascript
+asArray(undefined); // return []
+asArray(null);      // return []
+asArray('');        // return ['']
+asArray('abc');     // return ['abc']
+asArray(['abc']);   // return ['abc']
+asArray(11);        // return [11]
+asArray([11]);      // return [11]
+asArray([5, 6, 7]); // return [5, 6, 7]`
+```
+<br>
 
-### Object  
+#### `isNotEmpty( value )` `notEmpty( value )`
+* Check if object is array, and is not empty in a null-safe manner
+```javascript
+isNotEmpty(undefined); // return false
+isNotEmpty(null);      // return false
+isNotEmpty(123);       // return false
+isNotEmpty([]);        // return false
+isNotEmpty('');        // return false
+isNotEmpty('a');       // return true
+isNotEmpty('abc');     // return true
+isNotEmpty([1]);       // return true
+```
+<br>
+
+### **Object utils**
 <!-- eslint-disable no-new-wrappers -->
-| Function | Description | Examples |
-| :--- | :--- | :--- |
-| `isDefined( value )` | Check if object is defined |`isDefined(undefined); // return false`<br>`isDefined(null);      // return false`<br>`isDefined(0);         // return true`<br>`isDefined(1);         // return true`<br>`isDefined('');        // return true`<br>`isDefined('a');       // return true`<br>`isDefined('[]');      // return true`|
-| `asDefined( value )` | Return empty object if the obj is not defined, <br>otherwise the same object |`asDefined(undefined); // return {}`<br>`asDefined(null);      // return {}`<br>`asDefined(0);         // return 0`<br>`asDefined(1);         // return 1`<br>`asDefined('');        // return ''`<br>`asDefined('a');       // return 'a'`<br>`asDefined('[]');      // return []`|
+#### `isDefined( value )`
+* Check if object is defined
+```javascript
+isDefined(undefined); // return false
+isDefined(null);      // return false
+isDefined(0);         // return true
+isDefined(1);         // return true
+isDefined('');        // return true
+isDefined('a');       // return true
+isDefined('[]');      // return true
+```
+<br>
+
+#### `asDefined( value )`
+* Return empty object if the obj is not defined, otherwise the same object
+```javascript
+asDefined(undefined); // return {}
+asDefined(null);      // return {}
+asDefined(0);         // return 0
+asDefined(1);         // return 1
+asDefined('');        // return ''
+asDefined('a');       // return 'a'
+asDefined('[]');      // return []
+```
+<br>
 
