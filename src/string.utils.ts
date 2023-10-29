@@ -23,7 +23,13 @@ export const isStringNotEmpty = <T>(str: T): boolean => typeof str === 'string' 
  * return empty string if is null or undefined
  * @param str
  */
-export const emptyDefault = (str: string | null | undefined): string => str ?? '';
+export const defaultEmpty = (str: string | null | undefined): string => str ?? '';
+
+/**
+ * return empty string if is null or undefined
+ * @param str
+ */
+export const emptyDefault = defaultEmpty;
 
 /**
  * Normalize the string for special chars
@@ -51,3 +57,16 @@ export const lowerCaseIfString = <T>(obj: T) => (typeof obj === 'string' ? obj.t
  */
 export const includeIgnoreCase = (strToCheck: string, value: string) =>
     isStringNotEmpty(value) && normalize(emptyDefault(strToCheck)).toLowerCase().includes(normalize(value.toLowerCase()));
+
+/**
+ * Capitalize string value in a null-safe manner
+ * If string us null or undefined, empty string is returned, or the same value if @returnEmptyIfNull is set to false
+ * @param str the String to capitalize
+ * @param returnEmptyIfNull
+ */
+export const capitalize = (str: string, returnEmptyIfNull = true) => {
+    if (isStringNotEmpty(str)) {
+        return str.length > 1 ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : str.toUpperCase();
+    }
+    return returnEmptyIfNull ? defaultEmpty(str) : str;
+};
