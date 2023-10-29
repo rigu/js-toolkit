@@ -1,2 +1,2 @@
 # js-toolkit
-Toolkit to check and manage javascript string, array and object
+A set of JavaScript utils to check and manage javascript string, array and object
