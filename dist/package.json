@@ -20,9 +20,9 @@
     "javascript",
     "array",
     "string",
-    "toolkit",
     "utils",
-    "utilities"
+    "utilities",
+    "toolkit"
   ],
   "author": "Igor AFTENI <i.afteni@gmail.com>",
   "license": "Apache-2.0",
