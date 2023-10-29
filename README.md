@@ -35,23 +35,26 @@ yarn add @rigu/js-toolkit
 </section>
 
 <section class="usage">
-```typescript
+   ## Usage
+
+<!-- eslint-disable no-new-wrappers -->
+
+```javascript
 import { asArray, emptyDefault, isNotEmpty, isStringNotEmpty } from '@rigu/js-toolkit';
+```
 
-lat a = asArray(null);
-// return []
+   #### asArray( value )
+<!-- eslint-disable no-new-wrappers -->
 
-a = asArray('');
-// return [''']
-
-a = asArray(''abc'');
-// return [''abc'']
-
-a = asArray(11);
-// return [11]
-
-a = asArray([11]);
-// return [11]
+```javascript
+let a = asArray(null);  // return []
+a = asArray('');        // return ['']
+a = asArray('abc');     // return ['abc']
+a = asArray(['abc']);   // return ['abc']
+a = asArray(11);        // return [11]
+a = asArray([11]);      // return [11]
+a = asArray([5, 6, 7]); // return [5, 6, 7]
 
 ```
+
 </section>
