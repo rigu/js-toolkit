@@ -4,13 +4,15 @@
  * If the object is not defined, return empty array
  * @param obj the Object to check
  */
-export const asArray = <T>(obj: T | T[] = []): T[] => obj ? (Array.isArray(obj) ? obj : [obj]) : [];
+export const arrayOf = <T>(obj: T | T[] = []): T[] => obj ? (Array.isArray(obj) ? obj : [obj]) : [];
+export const asArray = arrayOf;
 
 /**
  * Check if array is not empty
  * @param obj
  */
 export const isNotEmpty = <T>(obj: T[] | string | undefined) => obj?.length > 0;
+export const notEmpty = isNotEmpty;
 
 /**
  * remove item duplicates from array

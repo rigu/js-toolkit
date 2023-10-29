@@ -1,12 +1,12 @@
 import { isNotEmpty } from './array.utils';
 
 /**
- * compares two strings in a null-safe manner
+ * compares two strings ignoring case and special chars in a null-safe manner
  * @param str1
  * @param str2
  */
 export const compareIgnoreCase = (str1: string | null | undefined, str2: string | null | undefined) =>
-    str1 && str2 && normalize(str1).toLowerCase() === normalize(str2).toLowerCase();
+    str1 === str2 || normalize(str1).toLowerCase() === normalize(str2).toLowerCase();
 
 /**
  * check if object is a string type
@@ -26,7 +26,7 @@ export const isStringNotEmpty = <T>(str: T): boolean => typeof str === 'string' 
 export const defaultEmpty = (str: string | null | undefined): string => str ?? '';
 
 /**
- * return empty string if is null or undefined
+ * return empty string if provided null or undefined
  * @param str
  */
 export const emptyDefault = defaultEmpty;
