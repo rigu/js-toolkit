@@ -18,7 +18,8 @@ limitations under the License.
 
 -->
 
-# js-toolkit
+# js-toolkit  
+### [![npm package](https://img.shields.io/npm/v/@rigu/js-toolkit.svg?style=flat-square)](https://www.npmjs.com/package/@rigu/js-toolkit)
 A set of JavaScript utils to check and manage javascript string, array and object (with TypeScript typings)
 
 <section class="installation">
