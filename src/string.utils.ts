@@ -6,7 +6,7 @@ import { isNotEmpty } from './array.utils';
  * @param str2
  */
 export const compareIgnoreCase = (str1: string | null | undefined, str2: string | null | undefined) =>
-    str1 === str2 || normalize(str1).toLowerCase() === normalize(str2).toLowerCase();
+    str1 === str2 || normalize(<string>str1).toLowerCase() === normalize(<string>str2).toLowerCase();
 
 /**
  * check if object is a string type
@@ -17,7 +17,7 @@ export const isString = <T>(obj: T): boolean => typeof obj === 'string';
 /**
  * checks if object is a string and contains text
  */
-export const isStringNotEmpty = <T>(str: T): boolean => typeof str === 'string' && isNotEmpty(str);
+export const isStringNotEmpty = <T>(str: T): boolean => isString(str) && isNotEmpty(<string>str);
 
 /**
  * return empty string if is null or undefined
@@ -38,20 +38,32 @@ export const emptyDefault = defaultEmpty;
 export const normalize = (str: string) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
 /**
- * return upper case of the string if is the string
+ * Return upper case if the argument object type is string, otherwise return the provided value
  * @param obj
  */
 export const upperCaseIfString = <T>(obj: T) => (typeof obj === 'string' ? obj.toUpperCase() : obj);
 
 /**
- * return lower case of the string if is the string
+ * Return upper case if the argument object type is string, otherwise return the provided value
+ * @param obj
+ */
+export const upperCase = upperCaseIfString;
+
+/**
+ * Return lower case if the argument object type is string, otherwise return the provided value
  * @param obj
  */
 export const lowerCaseIfString = <T>(obj: T) => (typeof obj === 'string' ? obj.toLowerCase() : obj);
 
+/**
+ * Return lower case if the argument object type is string, otherwise return the provided value
+ * @param obj
+ */
+export const lowerCase = lowerCaseIfString;
+
 
 /**
- * check if strToCheck include the value, ignoring case
+ * Check if strToCheck include the value, ignoring case
  * @param strToCheck String to check
  * @param value String to find in strToCheck
  */
