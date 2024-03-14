@@ -1,14 +1,19 @@
 {
   "compilerOptions": {
-    "module": "ES6",
+    "declaration": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noUncheckedIndexedAccess": true,
     "target": "ES5",
+    "verbatimModuleSyntax": true,
     "lib": [
       "ES2023",
       "DOM"
     ],
-    "declaration": true,
-    "outDir": "./dist/lib/es6",
-    "moduleResolution": "node",
+    "outDir": "./dist",
+    "strict": true
   },
   "include": [
     "src/**/*"
