@@ -11,7 +11,7 @@ export const asArray = arrayOf;
  * Check if array is not empty
  * @param obj
  */
-export const isNotEmpty = <T>(obj: T[] | string | undefined) => obj?.length > 0;
+export const isNotEmpty = <T>(obj: T[] | string): boolean => !!obj && obj.length > 0;
 export const notEmpty = isNotEmpty;
 
 /**
