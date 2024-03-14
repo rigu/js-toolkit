@@ -92,6 +92,20 @@ import { asArray, emptyDefault, isNotEmpty, isStringNotEmpty } from '@rigu/js-to
 * ####  `lowerCase( value )`
     *Return lower case if the argument object type is string, otherwise return the provided value*
     ```javascript
+    lowerCaseIfString('AbCdEfgH');  // return 'abcdefgh'
+    lowerCaseIfString('');          // return ''
+  
+    lowerCaseIfString(['AbCd', 'EfgH']);    // return ['abcd', 'efgh']
+    lowerCaseIfString([1234, 'EfgH']);      // return [1234, 'efgh']
+  
+    lowerCaseIfString(null);            // return null
+    lowerCaseIfString(undefined);       // return undefined
+    lowerCaseIfString(0);               // return 0
+    lowerCaseIfString(1);               // return 1
+    lowerCaseIfString(true);            // return true
+    lowerCaseIfString([]);              // return []
+    lowerCaseIfString([123, 456]);      // return [123, 456]
+    lowerCaseIfString([true, false]);   // return [true, false]
     ```
 <br>
 
@@ -99,6 +113,20 @@ import { asArray, emptyDefault, isNotEmpty, isStringNotEmpty } from '@rigu/js-to
 * ####  `upperCase( value )`
     *Return upper case if the argument object type is string, otherwise return the provided value*
     ```javascript
+    upperCaseIfString('AbCdEfgH');  // return 'ABCDEFGH'
+    upperCaseIfString('');          // return ''
+  
+    upperCaseIfString(['AbCd', 'EfgH']);    // return ['ABCD', 'EFGH']
+    upperCaseIfString([1234, 'EfgH']);      // return [1234, 'EFGH']
+  
+    upperCaseIfString(null);            // return null
+    upperCaseIfString(undefined);       // return undefined
+    upperCaseIfString(0);               // return 0
+    upperCaseIfString(1);               // return 1
+    upperCaseIfString(true);            // return true
+    upperCaseIfString([]);              // return []
+    upperCaseIfString([123, 456]);      // return [123, 456]
+    upperCaseIfString([true, false]);   // return [true, false]
     ```
 <br>
 
@@ -108,9 +136,34 @@ import { asArray, emptyDefault, isNotEmpty, isStringNotEmpty } from '@rigu/js-to
     ```
 <br>
 
-* ####  `capitalize( value )`
-    *Capitalize string value in a null-safe manner*
+* ####  `capitalize( value, returnEmptyIfNull = true )`
+    *Capitalize string value in a null-safe manner*<br>
+    *Return empty string if null or undefined value is provided*<br>
+    *If the flag `returnEmptyIfNull` is set to `false`, return the provided value if is undefined, null, or is not string*
     ```javascript
+    capitalize('abc');          // return 'Abc'
+    capitalize('abc', false);   // return 'Abc'
+  
+    capitalize(['abc', 123]);           // return ['Abc', 123]
+    capitalize(['abc', 123], false);    // return ['Abc', 123]
+    
+    capitalize('');         // return ''
+    capitalize(undefined);  // return ''
+    capitalize(null);       // return ''
+    capitalize(0);          // return ''
+    capitalize(1);          // return ''
+    capitalize(true);       // return ''
+    capitalize([]);         // return ''
+    capitalize([123]);      // return '';
+  
+    capitalize('', false);         // return ''
+    capitalize(undefined, false);  // return undefined
+    capitalize(null, false);       // return null
+    capitalize(0, false);          // return 0
+    capitalize(1, false);          // return 1
+    capitalize(true, false);       // return true
+    capitalize([], false);         // return []
+    capitalize([123], false);      // return [123];
     ```
 <br>
 
@@ -123,6 +176,8 @@ import { asArray, emptyDefault, isNotEmpty, isStringNotEmpty } from '@rigu/js-to
     compareIgnoreCase('','');                // return true
     compareIgnoreCase('ast', 'ast');         // return true
     compareIgnoreCase('âșț', 'ast');         // return true
+    compareIgnoreCase('Ast', 'asT');         // return true
+    compareIgnoreCase('âȘț', 'Ast');         // return true
     ```
 <br>
 
