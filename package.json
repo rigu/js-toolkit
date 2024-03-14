@@ -23,6 +23,7 @@
         "postinstall": "husky install",
         "prepack": "yarn clean && yarn build",
         "prettier": "prettier --check . --cache",
+        "publish": "npm publish --access public",
         "test": "yarn lint && yarn tsc && yarn prettier && yarn unit",
         "tsc": "tsc --noEmit",
         "unit": "vitest"
