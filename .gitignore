@@ -2,6 +2,7 @@
 node_modules
 dist/lib
 /build
+/dist
 /package
 .env
 .env.*
@@ -12,3 +13,4 @@ package-lock.json
 yarn.lock
 yarn-error.log
 /.idea
+
