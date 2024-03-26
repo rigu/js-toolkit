@@ -37,14 +37,14 @@
     },
     "homepage": "https://github.com/rigu/js-toolkit#readme",
     "devDependencies": {
-        "@types/node": "^20.11.27",
+        "@types/node": "^20.11.30",
         "eslint": "^8.57.0",
         "husky": "^9.0.11",
         "lint-staged": "^15.2.2",
         "prettier": "^3.2.5",
         "rimraf": "^5.0.5",
-        "typescript": "^5.4.2",
-        "vitest": "^1.3.1"
+        "typescript": "^5.4.3",
+        "vitest": "^1.4.0"
     },
     "private": false,
     "publishConfig": {
