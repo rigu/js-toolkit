@@ -60,13 +60,7 @@
     "homepage": "https://github.com/rigu/js-toolkit#readme",
     "private": false,
     "publishConfig": {
-        "access": "public",
-        "provenance": true
-    },
-    "release": {
-        "branches": [
-            "main"
-        ]
+        "access": "public"
     },
     "keywords": [
         "javascript",
