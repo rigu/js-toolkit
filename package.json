@@ -1,6 +1,6 @@
 {
     "name": "@rigu/js-toolkit",
-    "version": "1.0.5",
+    "version": "1.0.6-SNAPSHOT",
     "description": "A collection of JavaScript utilities for strings, objects and arrays.",
     "exports": {
         ".": {
