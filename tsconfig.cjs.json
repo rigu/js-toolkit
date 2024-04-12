@@ -1,8 +1,16 @@
 {
-    "extends": "./tsconfig.json",
     "compilerOptions": {
-        "declarationDir": "lib/cjs/types",
-        "module": "CommonJS",
-        "outDir": "lib/cjs"
-    }
+        "module": "commonjs",
+        "target": "ES5",
+        "declaration": true,
+        "outDir": "./build/lib/cjs",
+        "moduleResolution": "node",
+        "lib": [
+            "ES2023",
+            "DOM"
+        ]
+    },
+    "include": [
+        "src/**/*"
+    ]
 }
