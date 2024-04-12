@@ -61,3 +61,4 @@ export declare const includeIgnoreCase: (strToCheck: string, value: string) => b
  * @param returnEmptyString
  */
 export declare const capitalize: <T>(obj: T, returnEmptyString?: boolean) => T;
+//# sourceMappingURL=string.utils.d.ts.map

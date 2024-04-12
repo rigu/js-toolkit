@@ -10,18 +10,17 @@
         "forceConsistentCasingInFileNames": true,
         "inlineSourceMap": false,
         "isolatedModules": true,
-        "lib": [
-            "esnext"
-        ],
+        "lib": ["ES2023", "ESNext", "DOM"],
         "listEmittedFiles": false,
         "listFiles": false,
-        "moduleResolution": "node",
+        "moduleResolution": "Node",
         "noFallthroughCasesInSwitch": true,
         "pretty": true,
         "resolveJsonModule": true,
         "rootDir": "src",
         "skipLibCheck": true,
         "strict": true,
+        "target": "ES5",
         "traceResolution": false,
         "types": [
             "node"
