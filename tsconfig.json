@@ -1,37 +1,15 @@
 {
     "compilerOptions": {
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "baseUrl": "src",
-        "checkJs": true,
-        "declaration": true,
-        "declarationMap": true,
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "inlineSourceMap": false,
-        "isolatedModules": true,
+        "module": "ES6",
+        "target": "ES5",
         "lib": [
-            "esnext"
+            "ES2023",
+            "DOM"
         ],
-        "listEmittedFiles": false,
-        "listFiles": false,
+        "declaration": true,
+        "outDir": "./build/lib/esm",
         "moduleResolution": "node",
-        "noFallthroughCasesInSwitch": true,
-        "pretty": true,
-        "resolveJsonModule": true,
-        "rootDir": "src",
-        "skipLibCheck": true,
-        "strict": true,
-        "traceResolution": false,
-        "types": [
-            "node"
-        ]
     },
-    "compileOnSave": false,
-    "exclude": [
-        "node_modules",
-        "lib"
-    ],
     "include": [
         "src/**/*"
     ]

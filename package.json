@@ -1,6 +1,6 @@
 {
     "name": "@rigu/js-toolkit",
-    "version": "1.0.5",
+    "version": "1.0.8",
     "description": "A collection of JavaScript utilities for strings, objects and arrays.",
     "exports": {
         ".": {
@@ -16,6 +16,10 @@
     },
     "types": "./lib/cjs/types/index.d.ts",
     "main": "./lib/cjs/index.js",
+    "module": "lib/mjs/index.js",
+    "source": "./src/index.ts",
+    "typings": "lib/index.d.ts",
+    "sideEffects": false,
     "files": [
         "lib/**/*",
         "CHANGELOG.md",
@@ -24,23 +28,19 @@
         "README.md",
         "src"
     ],
-    "type": "module",
-    "sideEffects": false,
-    "module": "lib/mjs/index.js",
-    "source": "./src/index.ts",
-    "typings": "lib/index.d.ts",
     "scripts": {
-        "clean": "rimraf lib",
-        "build1": "npm-run-all clean build:esm build:cjs && yarn postbuild",
-        "build:esm": "tsc -p tsconfig.esm.json && move-file lib/esm/index.js lib/esm/index.mjs",
+        "clean": "rimraf build/lib",
+        "build1": "npm run clean && tsc && npm-run-all build:esm build:cjs && yarn postbuild",
+        "build:esm": "tsc -p tsconfig.esm.json",
+        "build:esm:old": "tsc -p tsconfig.esm.json && move-file build/lib/esm/index.js build/lib/esm/index.mjs",
         "build:cjs": "tsc -p tsconfig.cjs.json",
-        "compile": "rimraf lib && tsc && tsc --build tsconfig.cjs.json",
+        "compile": "rimraf build/lib && tsc && tsc --build tsconfig.cjs.json",
         "build": "yarn compile && yarn build-esm && yarn build-cjs",
         "build-esm": "tsc -p tsconfig.esm.json",
         "build-cjs": "tsc -p tsconfig.cjs.json",
         "postbuild": "yarn build-cjs-package && yarn build-esm-package",
-        "build-cjs-package": "echo '{\n  \"type\": \"commonjs\"\n}' > lib/cjs/package.json",
-        "build-esm-package": "echo '{\n  \"type\": \"commonjs\"\n}' > lib/esm/package.json",
+        "build-cjs-package": "echo '{\n  \"type\": \"commonjs\"\n}' > build/lib/cjs/package.json",
+        "build-esm-package": "echo '{\n  \"type\": \"commonjs\"\n}' > build/lib/esm/package.json",
         "lint": "eslint .",
         "prepack": "npm run clean && npm run build1",
         "prettier": "prettier --check . --cache",
@@ -61,6 +61,11 @@
     "private": false,
     "publishConfig": {
         "access": "public"
+    },
+    "release": {
+        "branches": [
+            "main"
+        ]
     },
     "keywords": [
         "javascript",
@@ -85,6 +90,6 @@
         "semantic-release": "^23.0.8",
         "ts-node": "^10.9.2",
         "typescript": "^5.4.5",
-        "vitest": "^1.4.0"
+        "vitest": "^1.5.0"
     }
 }

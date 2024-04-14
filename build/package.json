@@ -1,0 +1,41 @@
+{
+    "name": "@rigu/js-toolkit",
+    "version": "1.0.8",
+    "description": "A collection of JavaScript utilities for strings, objects and arrays.",
+    "main": "lib/cjs/index.js",
+    "module": "lib/esm/index.js",
+    "sideEffects": false,
+    "files": [
+        "lib",
+        "CHANGELOG.md",
+        "LICENSE",
+        "package.json",
+        "README.md",
+        "src"
+    ],
+    "author": {
+        "name": "Igor AFTENI",
+        "email": "i.afteni@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/rigu/js-toolkit/issues"
+    },
+    "homepage": "https://github.com/rigu/js-toolkit#readme",
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "keywords": [
+        "javascript",
+        "array",
+        "string",
+        "toolkit",
+        "utils",
+        "utilities"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rigu/js-toolkit.git"
+    }
+}

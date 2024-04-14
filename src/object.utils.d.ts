@@ -8,3 +8,4 @@ export declare const isDefined: <T>(obj: T) => boolean;
  * @param obj
  */
 export declare const asDefined: <T>(obj: T) => {};
+//# sourceMappingURL=object.utils.d.ts.map
